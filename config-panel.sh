@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
 CONF=""
 MONITORS=$(xrandr --listactivemonitors | grep 'Monitors:' | cut -d' ' -f2)
