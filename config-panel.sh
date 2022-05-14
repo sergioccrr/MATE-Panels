@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONF=""
-MONITORS=$(xrandr | grep -c " connected")
+MONITORS=$(xrandr --listactivemonitors | grep 'Monitors:' | cut -d' ' -f2)
 
 case $MONITORS in
 	1)
