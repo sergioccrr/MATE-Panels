@@ -18,6 +18,10 @@ case $MONITORS in
 	;;
 esac
 
+echo "Working..."
+
+dconf dump /org/mate/panel/ > "backups/$(date +"%Y%m%d_%H%M").ini"
+
 mate-panel --reset
 sleep 2
 dconf load /org/mate/panel/ < $CONF
